@@ -5,7 +5,7 @@ Summary:        Airshipper launcher for Veloren.
 
 License:        GPLv3
 URL:            https://github.com/veloren/Airshipper
-Source0:        https://github.com/veloren/Airshipper/archive/v0.7.0.tar.gz
+Source0:        https://github.com/veloren/Airshipper/archive/v%{version}.tar.gz
 
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(openssl)
