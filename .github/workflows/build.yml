@@ -20,7 +20,7 @@ jobs:
 
       - name: Get sources and dependencies
         run: |
-          dnf builldep airshipper.spec -y
+          dnf builddep airshipper.spec -y
           spectool -aRg airshipper.spec
 
       - name: Build RPM package
