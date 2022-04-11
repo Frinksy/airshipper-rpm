@@ -16,7 +16,7 @@ jobs:
     steps:
 
       - name: Install development tools
-        run: dnf install rpmbuild spectool
+        run: dnf install rpm-build rpmdevtools
 
       - name: Get sources and dependencies
         run: |
