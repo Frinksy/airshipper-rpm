@@ -16,11 +16,11 @@ jobs:
     steps:
 
       - name: Install development tools
-        run: dnf install rpm-build rpmdevtools
+        run: dnf install rpm-build rpmdevtools -y
 
       - name: Get sources and dependencies
         run: |
-          dnf builldep airshipper.spec
+          dnf builldep airshipper.spec -y
           spectool -aRg airshipper.spec
 
       - name: Build RPM package
