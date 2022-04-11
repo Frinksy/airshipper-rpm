@@ -9,6 +9,7 @@ on:
 jobs:
   build_rpm:
     name: Build Airshipper RPM
+    runs-on: ubuntu-latest
     container: fedora:35
 
 
