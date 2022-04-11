@@ -20,6 +20,10 @@ jobs:
 
       - name: Get sources and dependencies
         run: |
+          echo PWD
+          pwd
+          echo LS
+          ls -Ra ../..
           dnf builddep ./airshipper.spec -y
           spectool -aRg ./airshipper.spec
 
