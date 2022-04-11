@@ -14,16 +14,14 @@ jobs:
 
 
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
 
       - name: Install development tools
         run: dnf install rpm-build rpmdevtools 'dnf-command(builddep)' -y
 
       - name: Get sources and dependencies
         run: |
-          echo PWD
-          pwd
-          echo LS
-          ls -Ra ../..
           dnf builddep ./airshipper.spec -y
           spectool -aRg ./airshipper.spec
 
