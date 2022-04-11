@@ -16,7 +16,7 @@ jobs:
     steps:
 
       - name: Install development tools
-        run: dnf install rpm-build rpmdevtools -y
+        run: dnf install rpm-build rpmdevtools 'dnf-command(builddep)' -y
 
       - name: Get sources and dependencies
         run: |
