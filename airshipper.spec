@@ -21,9 +21,10 @@ Airshipper is a launcher for the open-world, open-source multiplayer voxel RPG V
 %prep
 %autosetup -n Airshipper-%{version}
 # Install rustup so we can compile using nightly rust
-curl https://sh.rustup.rs -sSf | sh -s -- --help
+curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal --default-toolchain none
 
 %build
+. $HOME/.cargo/env
 cargo build --release --bin airshipper
 
 %install
