@@ -11,6 +11,7 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(openssl)
 BuildRequires: pkgconfig(xkbcommon)
 BuildRequires: desktop-file-utils
+BuildRequires: /usr/bin/cc
 
 %global __cargo_skip_build 0
 %global debug_package %{nil}
