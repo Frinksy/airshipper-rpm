@@ -12,6 +12,7 @@ BuildRequires: pkgconfig(openssl)
 BuildRequires: pkgconfig(xkbcommon)
 BuildRequires: desktop-file-utils
 BuildRequires: /usr/bin/cc
+BuildRequires: /usr/bin/curl
 
 %global __cargo_skip_build 0
 %global debug_package %{nil}
@@ -37,15 +38,14 @@ desktop-file-install                                    \
 client/assets/net.veloren.airshipper.desktop
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/
 install -D client/assets/net.veloren.airshipper.png %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/
-install -D client/assets/net.veloren.airshipper.metainfo.xml -t %{buildroot}%{_metainfodir}
+install -D client/assets/net.veloren.airshipper.metainfo.xml -t %{buildroot}%{_datadir}/metainfo/
 
 %files
 %license LICENSE
-%{_bindir}/%{name}
+%caps(cap_net_raw=pe) %{_bindir}/%{name}
 %{_datadir}/applications/net.veloren.airshipper.desktop
 %{_datadir}/icons/hicolor/256x256/apps/net.veloren.airshipper.png
-%{_metainfodir}/net.veloren.airshipper.metainfo.xml
-%caps(cap_net_raw=pe) %{_bindir}/%{name}
+%{_datadir}/metainfo/net.veloren.airshipper.metainfo.xml
 
 
 %changelog
