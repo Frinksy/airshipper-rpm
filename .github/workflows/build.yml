@@ -1,0 +1,29 @@
+name: Build package
+
+on:
+  push:
+    branches: master
+  pull_request:
+    branches: master
+
+jobs:
+  build_rpm:
+    name: Build Airshipper RPM
+    runs-on: ubuntu-latest
+    container: fedora:35
+
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Install development tools
+        run: dnf install rpm-build rpmdevtools 'dnf-command(builddep)' -y
+
+      - name: Get sources and dependencies
+        run: |
+          dnf builddep ./airshipper.spec -y
+          spectool -aRg ./airshipper.spec
+
+      - name: Build RPM package
+        run: rpmbuild -ba airshipper.spec
