@@ -1,5 +1,5 @@
 Name:           airshipper
-Version:        0.9.0
+Version:        0.10.0
 Release:        1%{?dist}
 Summary:        Airshipper launcher for Veloren.
 
@@ -49,6 +49,9 @@ install -D client/assets/net.veloren.airshipper.metainfo.xml -t %{buildroot}%{_d
 
 
 %changelog
+* Fri Dec 23 2022 Adam Blanchet
+- Update to airshipper 0.10.0
+
 * Sat Sep 17 2022 Adam Blanchet
 - Update to airshipper 0.9.0
 
